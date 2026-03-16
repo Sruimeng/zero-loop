@@ -9,7 +9,7 @@ Goal: Physical skeleton → working pipeline.
 
 ## Build Order (Dependency-Driven)
 
-### Phase 0: Workspace Init
+### Phase 0: Workspace Init ✅
 ```
 pnpm init (workspace root)
 Create pnpm-workspace.yaml
@@ -19,14 +19,19 @@ Create packages/adapters/
 Create packages/skills/
 Create apps/web/
 ```
+Status: Complete. Monorepo structure established.
 
-### Phase 1: Shared Types (Unblocks Everything)
+### Phase 1: Shared Types (Unblocks Everything) ✅
 ```
-packages/shared/src/types.ts    ← GameIR interfaces
-packages/shared/src/schema.ts   ← Zod validation schemas
-packages/shared/package.json    ← @zero-loop/shared
+packages/shared/src/primitives.ts  ← Vector3, Color (dual-format adapter)
+packages/shared/src/scene.ts       ← Entity, Component (discriminated union)
+packages/shared/src/ui.ts          ← NexusComponent (17 UI types)
+packages/shared/src/index.ts       ← GameConfigSchema (root)
+packages/shared/package.json       ← @zero-loop/shared
+packages/shared/tsconfig.json      ← TypeScript config
 ```
-Milestone: `GameIR` validates with Zod. Zero dependencies.
+Milestone: `GameConfigSchema` validates with Zod. Inherited from `/Users/sruim/Desktop/projects/max/protocol`.
+Status: Complete. Build passing.
 
 ### Phase 2: Agent Core
 ```

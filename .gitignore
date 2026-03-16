@@ -1,4 +1,4 @@
-# Nuxt dev/build outputs
+# Build outputs
 .output
 .data
 .nuxt
@@ -19,6 +19,13 @@ logs
 .fleet
 .idea
 
-
 # Git worktrees
 .worktrees/
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment
+.env
+.env.local
+.env.*.local
